@@ -26,6 +26,7 @@ def launch_setup(context, *args, **kwargs):
     robot_model = LaunchConfiguration("robot_model")
     robot_family = LaunchConfiguration("robot_family")
     use_fake_hardware = LaunchConfiguration("use_fake_hardware")
+    fake_hardware_type = LaunchConfiguration("fake_hardware_type")
     client_ip = LaunchConfiguration("client_ip")
     client_port = LaunchConfiguration("client_port")
     use_fake_hardware = LaunchConfiguration("use_fake_hardware")
@@ -85,6 +86,9 @@ def launch_setup(context, *args, **kwargs):
             " ",
             "yaw:=",
             yaw,
+            " ",
+            "fake_hardware_type:=",
+            fake_hardware_type,
         ],
         on_stderr="capture",
     )
